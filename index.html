@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datenschutzerklärung - Family Cockpit</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #119589;
+        --primary-dark: #0d7269;
+        --primary-light: #e6f7f5;
+        --text-dark: #2c3e50;
+        --text-gray: #5a6c7d;
+        --bg-white: #ffffff;
+        --bg-light: #f8fafb;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+        min-height: 100vh;
+      }
+
+      .header {
+        background: linear-gradient(
+          120deg,
+          var(--primary-color) 0%,
+          #13a69a 50%,
+          var(--primary-dark) 100%
+        );
+        background-size: 200% 200%;
+        animation: gradientShift 8s ease infinite;
+        color: white;
+        padding: 4rem 2rem 3.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 0 50% 50% / 0 0 30px 30px;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes floatEmoji {
+        0%,
+        100% {
+          transform: rotate(15deg) translateY(0);
+        }
+        50% {
+          transform: rotate(15deg) translateY(-10px);
+        }
+      }
+
+      @keyframes floatEmojiReverse {
+        0%,
+        100% {
+          transform: rotate(-15deg) translateY(0);
+        }
+        50% {
+          transform: rotate(-15deg) translateY(10px);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header::before {
+        content: "👨‍👩‍👧‍👦";
+        position: absolute;
+        top: 1.5rem;
+        right: 8%;
+        font-size: 4rem;
+        opacity: 0.15;
+        animation: floatEmoji 4s ease-in-out infinite;
+      }
+
+      .header::after {
+        content: "📅";
+        position: absolute;
+        bottom: 1.5rem;
+        left: 8%;
+        font-size: 3.5rem;
+        opacity: 0.15;
+        animation: floatEmojiReverse 3.5s ease-in-out infinite;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .app-name {
+        font-size: 2.8rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        color: #ffffff;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        letter-spacing: -0.5px;
+      }
+
+      .header-subtitle {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+
+      .content-card {
+        background: var(--bg-white);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        margin-top: -2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+      }
+
+      h2 {
+        color: var(--primary-dark);
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      h2::before {
+        content: "";
+        width: 5px;
+        height: 1.4rem;
+        background: linear-gradient(
+          180deg,
+          var(--primary-color) 0%,
+          var(--primary-light) 100%
+        );
+        margin-right: 0.8rem;
+        border-radius: 3px;
+        border-radius: 2px;
+      }
+
+      h3 {
+        color: var(--text-dark);
+        font-size: 1.3rem;
+        margin-top: 1.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+        color: var(--text-gray);
+        line-height: 1.8;
+      }
+
+      ul,
+      ol {
+        margin-left: 2rem;
+        margin-bottom: 1.2rem;
+        color: var(--text-gray);
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+      }
+
+      strong {
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .highlight {
+        background: var(--primary-light);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 500;
+        color: var(--primary-dark);
+      }
+
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-gray);
+        font-size: 0.9rem;
+      }
+
+      .footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: var(--primary-dark);
+      }
+
+      .date {
+        display: inline-block;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .app-name {
+          font-size: 2rem;
+        }
+
+        .header-subtitle {
+          font-size: 1rem;
+        }
+
+        .content-card {
+          padding: 2rem 1.5rem;
+          border-radius: 15px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+        }
+
+        .container {
+          padding: 2rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <h1 class="app-name">Family Cockpit</h1>
+        <p class="header-subtitle">Der smarte Familienplaner</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="content-card">
+        <span class="date">Stand: Oktober 2025</span>
+        <h1>Datenschutzerklärung</h1>
+
+        <h2>1. Gegenstand</h2>
+        <p>
+          Wir von <span class="highlight">Family Cockpit</span> nehmen den
+          Schutz Ihrer persönlichen Daten sehr ernst und halten uns strikt an
+          die Regeln der Datenschutzgesetze. Personenbezogene Daten werden in
+          dieser App nur im technisch notwendigen Umfang erhoben.
+        </p>
+        <p>
+          In keinem Fall werden die erhobenen Daten verkauft oder aus anderen
+          Gründen an Dritte weitergegeben. Die nachfolgende Erklärung gibt Ihnen
+          einen Überblick darüber, wie wir diesen Schutz gewährleisten und
+          welche Art von Daten zu welchem Zweck erhoben werden.
+        </p>
+
+        <h2>2. Verzeichnis von Verarbeitungstätigkeiten</h2>
+        <p>
+          Family Cockpit speichert in der Datenbank nur Daten, die der Nutzer
+          für die Verwendung der App selbst erstellt hat und die für die
+          Abwicklung der Familienverwaltung notwendig sind.
+        </p>
+        <p>
+          Diese Daten sind im vollen Umfang vom Admin einer Familie in der
+          Administration einsehbar. Familienmitglieder können nur Daten sehen,
+          die relevant für die Nutzung der App sind.
+        </p>
+        <p>
+          Die Daten in der Datenbank werden vollständig und nicht
+          wiederherstellbar gelöscht, wenn der Nutzer sich selbst löscht oder
+          vom Administrator gelöscht wird.
+        </p>
+
+        <h3>2.1. Für die Registrierung bei Family Cockpit notwendige Daten</h3>
+
+        <p><strong>Name</strong></p>
+        <p>
+          Für die Nutzung von Family Cockpit muss ein Nutzer einen Namen
+          angeben, unter dem er in der App für andere Familienmitglieder
+          sichtbar ist.
+        </p>
+
+        <p><strong>E-Mail-Adresse</strong></p>
+        <p>
+          Weiterhin ist für die Registrierung bei Family Cockpit eine gültige
+          E-Mail-Adresse erforderlich, die ebenfalls gespeichert wird. Die
+          E-Mail-Adresse ist für die Kommunikation mit dem Teilnehmer wichtig,
+          was unter "4. Verwendung der E-Mail-Adresse" näher erläutert wird.
+        </p>
+
+        <p><strong>Passwort</strong></p>
+        <p>
+          Im Rahmen der Anmeldung bei Family Cockpit wählen Sie ein Passwort.
+          Dieses wird ausschließlich für den Login verwendet. Das Passwort wird
+          verschlüsselt gespeichert.
+        </p>
+
+        <h3>2.2. Für die Nutzung von Family Cockpit erforderliche Daten</h3>
+        <p>
+          Durch die aktive Nutzung von Family Cockpit werden folgende Daten
+          erhoben und gespeichert:
+        </p>
+
+        <p><strong>Letzter Login</strong></p>
+        <p>
+          Wir speichern Ihren letzten Login-Zeitpunkt für Sicherheitszwecke und
+          zur Verbesserung der App.
+        </p>
+
+        <p><strong>Kalendereinträge, Listen, Aufgaben und Rezepte</strong></p>
+        <p>
+          Im Rahmen der Nutzung von Family Cockpit speichern wir Ihre erstellten
+          Kalendereinträge, Listen (z.B. Einkaufslisten) und Aufgaben sowie den
+          Zeitpunkt der Erstellung und Änderung. Diese Daten sind für alle
+          Mitglieder Ihrer Familie sichtbar, die Sie zur Familie eingeladen
+          haben.
+        </p>
+
+        <p><strong>Hochgeladene Profilbilder</strong></p>
+        <p>
+          Es steht jedem Nutzer frei, ein eigenes Profilbild hochzuladen. Die
+          Bilder sind für alle Mitglieder Ihrer Familie sichtbar. Sobald das
+          Bild gelöscht oder verändert wird, werden die bisherigen Bilder
+          gelöscht.
+        </p>
+
+        <p><strong>Push-Benachrichtigungen</strong></p>
+        <p>
+          Im Rahmen von Family Cockpit können Push-Benachrichtigungen an Nutzer
+          versendet werden (z.B. Erinnerungen zu Terminen, Aufgaben oder
+          Hinweise auf Änderungen). Für die Zustellung wird ein anonymisiertes
+          Geräte-Token gespeichert und verwendet. Die Zusendung der
+          Push-Benachrichtigungen kann jederzeit in den Einstellungen
+          deaktiviert werden.
+        </p>
+
+        <h3>2.3. Kommunikationsdaten</h3>
+
+        <p><strong>Geräteinformationen</strong></p>
+        <p>
+          Beim Aufruf der App übermittelt Ihr Gerät automatisch Informationen
+          wie Gerätetyp, Betriebssystem und App-Version. Wir verwenden die
+          Geräteinformationen ausschließlich zur statistischen Analyse und zur
+          Rekonstruktion von Bugs (Fehlern).
+        </p>
+
+        <h2>4. Verwendung der E-Mail-Adresse</h2>
+
+        <h3>4.1. Zweck der E-Mail-Adresse</h3>
+        <p>
+          Wenn Sie sich bei Family Cockpit als neuer Nutzer anmelden oder eine
+          neue Familie erstellen, wird im Anmeldeformular Ihre E-Mail-Adresse
+          abgefragt. Über die E-Mail-Adresse lässt sich ein Bezug auf eine
+          konkrete Person herstellen. Es handelt sich daher bei E-Mail-Adressen
+          um personenbezogene Daten.
+        </p>
+        <p>
+          Die E-Mail-Adresse wird für die Verwendung zum Zwecke der
+          Authentifizierung verwendet. Sie dient dabei als eindeutige Kennung
+          einer Person, die auch durch die Person bestätigt werden kann.
+        </p>
+        <p>
+          Es werden an diese E-Mail-Adresse System-E-Mails wie z.B.
+          Terminerinnerungen oder Benachrichtigungen automatisch versendet.
+          Diese E-Mails können in den eigenen Einstellungen deaktiviert werden.
+        </p>
+        <p>
+          Technische E-Mails zur Verifizierung oder für das Zurücksetzen des
+          Passworts werden an diese E-Mail versendet.
+        </p>
+        <p>
+          Es wird keine Werbung von Family Cockpit an die E-Mail-Adresse
+          gesendet.
+        </p>
+
+        <h3>3.2. Zugriff auf die E-Mail-Adresse</h3>
+        <p>
+          Der Familienadministrator hat Zugriff auf die E-Mail-Adresse der
+          Familienmitglieder.
+        </p>
+        <p>
+          Die Family Cockpit Mitarbeiter haben Zugriff auf die E-Mail-Adresse.
+        </p>
+        <p>
+          Die E-Mail-Adresse wird von Family Cockpit an keinen Dritten
+          weitergegeben oder in irgendeiner Form an Dritte verarbeitet.
+        </p>
+
+        <h2>4. Persönliche Daten löschen</h2>
+        <p>
+          Die persönlichen Daten können nur gelöscht werden, wenn der Nutzer
+          nicht mehr Family Cockpit nutzen möchte.
+        </p>
+        <p>
+          Wird Ihr Nutzer-Account innerhalb einer Familie von einem
+          Familienadministrator gelöscht, werden sämtliche Daten des Nutzers wie
+          z.B. E-Mail-Adresse, Name oder Profilbild zunächst deaktiviert (Soft
+          Delete) und innerhalb von 30 Tagen endgültig und unwiederherstellbar
+          aus der Datenbank gelöscht.
+        </p>
+        <p>
+          Wird eine komplette Familie gelöscht, werden alle dazugehörigen
+          Nutzer-Accounts und deren Daten ebenfalls zunächst deaktiviert und
+          innerhalb von 30 Tagen endgültig gelöscht.
+        </p>
+
+        <h2>6. Datenspeicherung und -sicherheit</h2>
+        <p>
+          Ihre Daten werden ausschließlich auf Servern in
+          <span class="highlight">Deutschland</span> gespeichert und durch
+          modernste Verschlüsselungstechnologien geschützt. Wir verwenden:
+        </p>
+        <ul>
+          <li>SSL/TLS-Verschlüsselung für die Datenübertragung</li>
+          <li>Verschlüsselte Datenbanken</li>
+          <li>Regelmäßige Sicherheitsupdates</li>
+          <li>Zugriffsbeschränkungen und Authentifizierung</li>
+        </ul>
+        <p>
+          Alle Daten werden gemäß der Datenschutz-Grundverordnung (DSGVO)
+          verarbeitet.
+        </p>
+
+        <h2>7. Auskunftsrecht und Ihre Rechte</h2>
+        <p>
+          Sie haben jederzeit das Recht auf Auskunft über die bezüglich Ihrer
+          Person gespeicherten Daten, deren Herkunft und Empfänger sowie den
+          Zweck der Speicherung.
+        </p>
+        <p>
+          Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:
+        </p>
+        <ul>
+          <li>
+            <strong>Auskunft:</strong> Sie können Auskunft über die bei uns
+            gespeicherten Daten verlangen
+          </li>
+          <li>
+            <strong>Berichtigung:</strong> Unrichtige Daten können Sie jederzeit
+            korrigieren lassen
+          </li>
+          <li>
+            <strong>Löschung:</strong> Sie können die Löschung Ihrer Daten
+            verlangen
+          </li>
+          <li>
+            <strong>Einschränkung:</strong> Sie können die Verarbeitung
+            einschränken lassen
+          </li>
+          <li>
+            <strong>Datenübertragbarkeit:</strong> Sie können Ihre Daten in
+            einem strukturierten Format erhalten
+          </li>
+          <li>
+            <strong>Widerspruch:</strong> Sie können der Verarbeitung
+            widersprechen
+          </li>
+        </ul>
+
+        <h2>8. Kontakt</h2>
+        <p>
+          Wenn Sie weitere Fragen haben, die Ihnen diese Datenschutzerklärung
+          nicht beantworten konnte, oder wenn Sie zu einem Punkt vertiefte
+          Informationen wünschen, können Sie jederzeit mit uns in Kontakt
+          treten.
+        </p>
+        <p>
+          Sie können uns eine E-Mail an
+          <a
+            href="mailto:support@familycockpit.com"
+            style="
+              color: var(--primary-color);
+              text-decoration: none;
+              font-weight: 500;
+            "
+            >support [at] familycockpit.com</a
+          >
+          senden.
+        </p>
+
+        <h2>10. Beschwerderecht</h2>
+        <p>
+          Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über
+          die Verarbeitung Ihrer personenbezogenen Daten durch uns zu
+          beschweren.
+        </p>
+
+        <h2>Eine App, der Sie wirklich vertrauen können</h2>
+        <p>
+          Family Cockpit wird von der coodoo GmbH entwickelt und betrieben. Uns
+          ist es besonders wichtig, allen Nutzern ein sicheres und
+          vertrauenswürdiges Familien-Management-Tool zu bieten und
+          verantwortungsvoll mit Ihren Daten umzugehen.
+        </p>
+        <p>
+          Family Cockpit finanziert sich ausschließlich durch
+          Premium-Funktionen. Es gibt keine Werbung oder andere Formen der
+          Monetarisierung, die auf Kosten des Datenschutzes gehen.
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        © 2025 coodoo GmbH |
+        <a href="http://familycockpit.com">familycockpit.com</a>
+      </p>
+    </footer>
+  </body>
+</html>
